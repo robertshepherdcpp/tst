@@ -1,7 +1,6 @@
 // This is a project for testing things.
 
 #include"meta.hpp"
-#include<windows.graphics.h>
 
 int main()
 {
