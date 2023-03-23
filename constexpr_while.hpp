@@ -9,7 +9,7 @@ struct pack
 {
 	constexpr auto operator()()
 	{
-		if constexpr (condition_for_val(start_value))
+		if constexpr (!condition_for_val(start_value))
 		{
 			return 0;
 		}
