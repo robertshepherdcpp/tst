@@ -23,5 +23,11 @@
     <ClInclude Include="meta.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="other.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="constexpr_while.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
