@@ -52,7 +52,7 @@ constexpr auto for_each_lambda(std::tuple<Ts...> tup)
 	{
 		return;
 	}
-	[&] <std::size_t... indexes>(std::make_index_sequence<indexes...>)
+	[&] <std::size_t... indexes>(std::index_sequence<indexes...>)
 	{
 		(std::get<indexes>(tup)(), ...);
 	}(std::make_index_sequence<sizeof...(Ts)>{});
