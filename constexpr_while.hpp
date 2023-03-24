@@ -1,3 +1,4 @@
+// https://www.godbolt.org/z/eKGrjrGsz
 #pragma once
 
 #include<tuple>
