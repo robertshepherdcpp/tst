@@ -1,4 +1,5 @@
 // https://www.godbolt.org/z/eKGrjrGsz
+// https://www.godbolt.org/z/rfr4xT8zE
 #pragma once
 
 #include<tuple>
