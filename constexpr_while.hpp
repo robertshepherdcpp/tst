@@ -1,5 +1,7 @@
 #pragma once
 
+// https://godbolt.org/z/G4bWKz6M8
+
 #include<tuple>
 #include<utility>
 #include<cstddef>
