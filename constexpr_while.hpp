@@ -3,6 +3,7 @@
 #include<tuple>
 #include<utility>
 #include<cstddef>
+#include<iostream>
 
 template<auto start_value, auto condition_for_val, auto operation_on_val>
 struct pack
@@ -15,7 +16,7 @@ struct pack
 		}
 		else
 		{
-			return condition_for_val(start_value) + pack<operation_on_val(start_value), condition_for_val, operation_on_val>{}();
+			return 1 + pack<operation_on_val(start_value), condition_for_val, operation_on_val>{}();
 		}
 	}
 };
@@ -32,27 +33,16 @@ struct any_first
 template<auto iterations, auto lambda>
 constexpr auto make_tuple_sequence()
 {
-	if constexpr (iterations == 0)
+	return[&]<std::size_t... indexes>(std::index_sequence<indexes...>)
 	{
-		return std::tuple{};
-	}
-	else
-	{
-		return[&]<std::size_t... indexes>(std::index_sequence<indexes...>)
-		{
-			return std::tuple{ (any_first<lambda, indexes>{}())... };
-		}(std::make_index_sequence<iterations>{});
-	}
+		return std::tuple{ (any_first<lambda, indexes>{}())... };
+	}(std::make_index_sequence<iterations>{});
 }
 
 template<typename... Ts>
 constexpr auto for_each_lambda(std::tuple<Ts...> tup)
 {
-	if constexpr (sizeof...(Ts) == 0)
-	{
-		return;
-	}
-	[&] <std::size_t... indexes>(std::make_index_sequence<indexes...>)
+	[&] <std::size_t... indexes>(std::index_sequence<indexes...>)
 	{
 		(std::get<indexes>(tup)(), ...);
 	}(std::make_index_sequence<sizeof...(Ts)>{});
