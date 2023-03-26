@@ -1,3 +1,5 @@
+// https://www.godbolt.org/z/eKGrjrGsz
+// https://www.godbolt.org/z/rfr4xT8zE
 #pragma once
 
 // https://godbolt.org/z/G4bWKz6M8
@@ -44,7 +46,7 @@ constexpr auto make_tuple_sequence()
 template<typename... Ts>
 constexpr auto for_each_lambda(std::tuple<Ts...> tup)
 {
-	[&] <std::size_t... indexes>(std::index_sequence<indexes...>)
+	[&] <std::size_t... indexes>(std::make_index_sequence<indexes...>)
 	{
 		(std::get<indexes>(tup)(), ...);
 	}(std::make_index_sequence<sizeof...(Ts)>{});
