@@ -137,6 +137,7 @@
     <ClInclude Include="constexpr_while.hpp" />
     <ClInclude Include="meta.hpp" />
     <ClInclude Include="other.hpp" />
+    <ClInclude Include="type_parse.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

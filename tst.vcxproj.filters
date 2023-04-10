@@ -29,5 +29,8 @@
     <ClInclude Include="constexpr_while.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="type_parse.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
